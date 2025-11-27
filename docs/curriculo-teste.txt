@@ -1,0 +1,28 @@
+CONTRATO DE ESTÁGIO
+
+ESTAGIÁRIO: Maria Santos
+EMPRESA: Tech Solutions Ltda.
+CARGO: Estagiária em Desenvolvimento de Software
+PERÍODO: 01/03/2024 a 31/12/2024
+CARGA HORÁRIA: 30 horas semanais
+BOLSA AUXÍLIO: R$ 1.500,00
+BENEFÍCIOS: Vale transporte, Vale refeição
+
+ATIVIDADES:
+- Desenvolvimento de aplicações web
+- Manutenção de sistemas legados
+- Participação em reuniões de equipe
+- Testes de software
+- Documentação técnica
+
+SUPERVISOR: Carlos Oliveira
+CARGO: Gerente de Projetos
+CONTATO: carlos.oliveira@techsolutions.com
+
+ASSINATURAS:
+___________________________
+Maria Santos
+
+___________________________
+Carlos Oliveira
+Tech Solutions Ltda.
