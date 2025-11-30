@@ -63,10 +63,6 @@ Essa combinação permite encontrar tanto informações exatas quanto conceitual
 - **python-docx** - Extração de texto de DOCX
 - **python-dotenv** - Gerenciamento de variáveis de ambiente
 
-### Modelos de IA
-- **all-MiniLM-L6-v2** - Modelo de embeddings multilíngue
-- **384 dimensões** - Tamanho dos vetores de embedding
-
 ## 📦 Instalação
 
 ### Pré-requisitos
@@ -115,6 +111,12 @@ pip install -r requirements.txt
 - Coloque os documentos na pasta `docs/`
 - Formatos suportados: **PDF**, **TXT**, **DOCX**
 
+2. No diretório do projeto, execute:
+```bash
+python main.py
+```
+Com a execução iniciada, o sistema executa:
+
 2. Indexação Automática
 - O sistema detecta automaticamente novos documentos
 - Extrai o texto e gera embeddings
@@ -130,13 +132,13 @@ pip install -r requirements.txt
   - `main.py`: Aplicação principal
   - `docker-compose.yml`: Docker Compose para ambiente de desenvolvimento local
   - `requirements.txt`: Dependências do Python
-  - `.env`: Variáveis de ambiente
+  - `.env_template`: Template das variáveis de ambiente para criação de .env
   - `docs/`: Diretório onde são armazenados os arquivos que serão utilizados para busca
-    - `historico-aluno.pdf`: Exemplo de documento
+
   - `src/`
     - `__init__.py`
     - `extract_text.py`: Funções associadas a extração de textos de documentos em PDF, TXT ou DOCX
     - `embedding.py`: Funções de vetorização de palavras extraídas
     - `search.py`: Funções de busca por textos dentro do ElasticSearch
-    - `create_index.py`: Criação e gerenciamento de índices.
+    - `create_index.py`: Criação e gerenciamento de índices
 
