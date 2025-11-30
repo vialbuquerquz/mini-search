@@ -117,7 +117,7 @@ python main.py
 ```
 Com a execução iniciada, o sistema executa:
 
-2. Indexação Automática
+- Indexação automática:
 - O sistema detecta automaticamente novos documentos
 - Extrai o texto e gera embeddings
 - Indexa os dados no **Elasticsearch**
