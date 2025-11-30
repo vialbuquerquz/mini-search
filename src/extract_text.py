@@ -2,7 +2,6 @@ import pdfplumber
 from docx import Document
 import os
 
-
 def extract_text(filename: str) -> str:
     """
     Extração de texto de arquivos nos formatos: TXT, PDF ou DOCX.

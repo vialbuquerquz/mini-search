@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import os
 from src.extract_text import extract_text
 from src.create_index import create_index
-from src.search import search_semantic, find_relevant_preview
+from src.search import search_semantic
 from src.embedding import generate_embedding
 
 load_dotenv()
@@ -85,21 +85,21 @@ while True:
     if not results:
         print("\n❌ Nenhum resultado encontrado na base completa")
     else:
-        print(f"\n📊 RESUMO: {len(results)} resultado(s) em toda a base")
+        print(
+            f"\n📊 RESUMO: {len(results)} documento(s) correspondentes com a busca encontrados.")
 
         for i, hit in enumerate(results, 1):
             score = hit["_score"]
-            percentual = round(score * 100, 2)
+
+            # Converter script_score para intervalo 0–1
+            normalized_score = (score - 1) / 1
+            percentual = round(normalized_score * 100, 2)
 
             filename = hit["_source"]["filename"]
             index_source = hit["_index_source"]
 
             content = hit["_source"]["content"]
 
-            # Encontra trecho mais relevante
-            preview = find_relevant_preview(content, query)
-
             print(f"\n{i}. 🏷️  {filename}")
-            print(f"   📂 Índice: {index_source}")
+            print(f"   📂 Índice Elastic: {index_source}")
             print(f"   ⭐ Similaridade com o termo buscado: {percentual}%")
-            print(f"   📝 {preview}")

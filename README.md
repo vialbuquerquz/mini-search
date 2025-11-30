@@ -1,6 +1,6 @@
-# 🔍 Mini Search - Sistema de Busca Semântica
+# 🔍 Mini Search - Sistema de Busca
 
-Sistema de busca inteligente que combina busca lexical tradicional com busca semântica usando embeddings vetorizados para encontrar documentos por significado.
+Um sistema avançado de recuperação de informações que implementa técnicas de PLN para integrar buscas lexical (BM25) e semântica através de embeddings vetoriais. A solução recupera documentos indexados no ElasticSearch mediante consultas por termos específicos, apresentando os resultados classificados por score de relevância calculado a partir da similaridade de cosseno, comparado com a consulta original.
 
 ## 📋 Índice
 
@@ -16,8 +16,11 @@ Sistema de busca inteligente que combina busca lexical tradicional com busca sem
 
 O Mini Search é um sistema de busca que utiliza técnicas modernas de processamento de linguagem natural para oferecer duas formas de busca:
 
-- **Busca Lexical**: Busca tradicional por palavras-chave exatas
-- **Busca Semântica**: Busca por similaridade de significado usando embeddings
+- **Busca Lexical(BM25)**: Busca tradicional por palavras-chave localizando resultados com correspondência literal
+- **Busca Semântica**: Busca por similaridade de significado usando embeddings, calculados pelo cosseno de similaridade.
+- **Busca Híbrida**: Combinação de lexical e semântica,
+
+Essa combinação permite encontrar tanto informações exatas quanto conceitualmente relacionadas, melhorando o poder de busca em documentos extensos.
 
 ## ✨ Funcionalidades
 
@@ -31,6 +34,12 @@ O Mini Search é um sistema de busca que utiliza técnicas modernas de processam
 - Usa modelos de embeddings multilíngues
 - Encontra documentos semanticamente relacionados
 - Score baseado em similaridade de cosseno
+
+###⚡ Busca Híbrida
+- Combina BM25 (lexical) + embeddings (semântica).
+- Parametrização para dar prioridade ao que contém o termo exato.
+- Filtragem automática de resultados relevântes, com score mínimo de 30%
+
 
 ### 📄 Processamento de Documentos
 - Suporte a múltiplos formatos: PDF, TXT, DOCX
@@ -49,7 +58,7 @@ O Mini Search é um sistema de busca que utiliza técnicas modernas de processam
 ### Backend
 - **Python 3.8+** - Linguagem principal
 - **Elasticsearch 8.x** - Motor de busca e indexação
-- **Sentence Transformers** - Modelos de embeddings
+- **Sentence Transformers** - Modelo de embedding all-MiniLM-L6-v2 de 384 dimensões
 - **pdfplumber** - Extração de texto de PDFs
 - **python-docx** - Extração de texto de DOCX
 - **python-dotenv** - Gerenciamento de variáveis de ambiente
