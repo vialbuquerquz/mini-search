@@ -31,22 +31,9 @@ services:
       - elasticsearch
     networks:
       - elastic-network
-  
-  chroma:
-    image: ghcr.io/chroma-core/chroma:latest 
-    environment:
-      - IS_PERSISTENT=TRUE 
-      - CHROMA_SERVER_HOST=0.0.0.0 
-    volumes:
-      - chroma-data:/chroma/chroma/ 
-    ports:
-      - "8000:8000"
-    restart: always 
 
 volumes:
   elasticsearch_data:
-    driver: local
-  chroma-data:
     driver: local
 
 networks:
