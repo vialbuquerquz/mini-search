@@ -35,7 +35,7 @@ Essa combinação permite encontrar tanto informações exatas quanto conceitual
 - Encontra documentos semanticamente relacionados
 - Score baseado em similaridade de cosseno
 
-###⚡ Busca Híbrida
+### ⚡ Busca Híbrida
 - Combina BM25 (lexical) + embeddings (semântica).
 - Parametrização para dar prioridade ao que contém o termo exato.
 - Filtragem automática de resultados relevântes, com score mínimo de 30%
