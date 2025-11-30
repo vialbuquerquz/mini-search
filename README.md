@@ -10,6 +10,7 @@ Um sistema avançado de recuperação de informações que implementa técnicas 
 - [Instalação](#-instalação)
 - [Fluxo de execução](#-fluxo-de-execucao)
 - [Estrutura do projeto](#-extrutura-do-projeto)
+- [API](#-api)
 
 
 ## 🎯 Visão Geral
@@ -18,7 +19,8 @@ O Mini Search é um sistema de busca que utiliza técnicas modernas de processam
 
 - **Busca Lexical(BM25)**: Busca tradicional por palavras-chave localizando resultados com correspondência literal
 - **Busca Semântica**: Busca por similaridade de significado usando embeddings, calculados pelo cosseno de similaridade.
-- **Busca Híbrida**: Combinação de lexical e semântica,
+- **Busca Híbrida**: Combinação de lexical e semântica, engloba consultas para localização de respostas não exatas nos documentos indexados
+
 
 Essa combinação permite encontrar tanto informações exatas quanto conceitualmente relacionadas, melhorando o poder de busca em documentos extensos.
 
@@ -47,11 +49,15 @@ Essa combinação permite encontrar tanto informações exatas quanto conceitual
 - Indexação eficiente no Elasticsearch
 - Geração automática de embeddings
 
+### 🔌 API REST (Flask)
+- Operações de consulta, remoção e gerenciamento de documentos
+- Comunicação direta com o Elasticsearch por HTTP
+
 ### 🎯 Interface
 - Interface de linha de comando intuitiva
 - Exibição de trechos relevantes
 - Score de relevância
-- Destaque de resultados
+
 
 ## 🛠️ Tecnologias
 
@@ -62,6 +68,7 @@ Essa combinação permite encontrar tanto informações exatas quanto conceitual
 - **pdfplumber** - Extração de texto de PDFs
 - **python-docx** - Extração de texto de DOCX
 - **python-dotenv** - Gerenciamento de variáveis de ambiente
+- **FLASK - API Rest** para interagir com o ElasticSearch e executar operações via HTTP.
 
 ## 📦 Instalação
 
@@ -141,4 +148,25 @@ Com a execução iniciada, o sistema executa:
     - `embedding.py`: Funções de vetorização de palavras extraídas
     - `search.py`: Funções de busca por textos dentro do ElasticSearch
     - `create_index.py`: Criação e gerenciamento de índices
+  
+  - `api/`
+    - `app.py`: API Flask para operações no ElasticSearch
 
+
+### Rotas da API
+
+  - DELETE /delete-index: Remove um documento do Elasticsearch através do nome do arquivo
+  
+  **Exemplo de Requisição**
+
+    DELETE http://localhost:5000/delete-index?filename=historico-aluno
+
+
+  **Resposta de sucesso**
+
+
+    {
+    "status": "success",
+    "message": "Documento (nome do docuemnto) removido com sucesso",
+    "filename": "historico-aluno"
+    }
