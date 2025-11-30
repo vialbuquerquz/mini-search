@@ -108,7 +108,7 @@ pip install -r requirements.txt
 ## ⚡ Fluxo de Trabalho
 
 1. Preparação dos Documentos
-- Coloque os documentos na pasta `docs/`
+- Adicione os documentos na pasta `docs/`
 - Formatos suportados: **PDF**, **TXT**, **DOCX**
 
 2. No diretório do projeto, execute:
@@ -124,7 +124,7 @@ Com a execução iniciada, o sistema executa:
 
 3. Busca
 - Digite os termos de busca
-- Visualize os resultados com trechos relevantes
+- Visualize os resultados encontrados através das buscas lexicais e semânticas realizadas com maior relevância para a busca
 
 ### Estrutura do Projeto
 
